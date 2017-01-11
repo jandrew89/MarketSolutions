@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94011d94cf9b4bf0aec55a9b7033f060" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreModel.EventLog" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Employee" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Product" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.ProductCategory" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.ProductInventory" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Customer" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Order" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.OrderDetail" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Shipper" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="StoreModel.Sales_Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Production_Product_ProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Production_ProductInventory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Sales_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Sales_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Sales_Order_Shipper" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.Sales_OrderDetail_Order" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
