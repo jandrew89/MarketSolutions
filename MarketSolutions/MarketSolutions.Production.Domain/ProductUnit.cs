@@ -12,6 +12,11 @@ namespace MarketSolutions.Production.Domain
         public string ProductName { get; private set; }
         public string ProductDescription { get; private set; }
 
+        private ProductUnit()
+        {
+
+        }
+
         public ProductUnit(string productName, string productDescription)
         {
             if (string.IsNullOrEmpty(productName)) throw new ArgumentNullException("Product Name");

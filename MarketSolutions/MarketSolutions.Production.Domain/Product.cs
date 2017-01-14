@@ -10,13 +10,23 @@ namespace MarketSolutions.Production.Domain
     public class Product : EntityBase<int>
     {
         public ProductUnit ProductUnit;
+        public string ProductName { get; private set; }
+        public string Description { get; private set; }
+        public IList<ProductInventory> ProductInventories { get; set; }
+        public int ProductCategoryId { get; private set; }
+        private Product() : base(new int())
+        {
+            this.ProductInventories = new List<ProductInventory>();
+        }
 
-        public Product(int id, string productName, decimal unitPrice, 
-            string productDescription, bool discontinued, ProductCategory productCategory) : base(id)
+        public Product(int Id, int productCategoryId, string productName, decimal unitPrice, 
+            string productDescription, bool discontinued, ProductCategory productCategory) : base(Id)
         {
             this.ProductCategory = productCategory;
             this.Discontinued = discontinued;
             this.UnitPrice = unitPrice;
+            this.ProductCategoryId = productCategoryId;
+            this.ProductName = productName;
             this.ProductUnit = new ProductUnit(productName, productDescription);
         }
 

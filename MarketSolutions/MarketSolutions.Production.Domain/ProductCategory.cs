@@ -9,7 +9,13 @@ namespace MarketSolutions.Production.Domain
 {
     public class ProductCategory : EntityBase<int>
     {
-        public ProductCategory(int id, string productCategoryName) : base(id)
+        public IList<Product> Products { get; set; }
+
+        private ProductCategory() : base(new int())
+        {
+            this.Products = new List<Product>();
+        }
+        public ProductCategory(int Id, string productCategoryName) : base(Id)
         {
             if (string.IsNullOrEmpty(productCategoryName)) throw new ArgumentNullException("Product category name");
             this._productCategoryName = productCategoryName;

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96935C40-43AC-4C11-9DC1-E411E5809CB4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoDatabaseTester</RootNamespace>
+    <AssemblyName>DemoDatabaseTester</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MarketSolutionsDataMigrations\201701130148353_FirstInitialisation.cs" />
+    <Compile Include="MarketSolutionsDataMigrations\201701130148353_FirstInitialisation.Designer.cs">
+      <DependentUpon>201701130148353_FirstInitialisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketSolutionsDataMigrations\201701130426480_Second.cs" />
+    <Compile Include="MarketSolutionsDataMigrations\201701130426480_Second.Designer.cs">
+      <DependentUpon>201701130426480_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketSolutionsDataMigrations\201701130433337_ProductInventory.cs" />
+    <Compile Include="MarketSolutionsDataMigrations\201701130433337_ProductInventory.Designer.cs">
+      <DependentUpon>201701130433337_ProductInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketSolutionsDataMigrations\201701140011349_ProductUpdate.cs" />
+    <Compile Include="MarketSolutionsDataMigrations\201701140011349_ProductUpdate.Designer.cs">
+      <DependentUpon>201701140011349_ProductUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketSolutionsDataMigrations\201701140015565_ProductUpdate2.cs" />
+    <Compile Include="MarketSolutionsDataMigrations\201701140015565_ProductUpdate2.Designer.cs">
+      <DependentUpon>201701140015565_ProductUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketSolutionsDataMigrations\Configuration.cs" />
+    <Compile Include="ProductionContextService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketSolutions.Production.Domain\MarketSolutions.Production.Domain.csproj">
+      <Project>{86c85f60-21e2-4153-8981-dbdf5aca7140}</Project>
+      <Name>MarketSolutions.Production.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketSolutions.Production.Repository.EF\MarketSolutions.Production.Repository.EF.csproj">
+      <Project>{9b4032ba-41af-4672-bc94-fb1c13c6b0f5}</Project>
+      <Name>MarketSolutions.Production.Repository.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketSolutions.Repository.EF\MarketSolutions.Repository.EF.csproj">
+      <Project>{55e920a2-9e7f-40bf-963c-06edcf076865}</Project>
+      <Name>MarketSolutions.Repository.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketSolutions.SharedKernal\MarketSolutions.SharedKernal.csproj">
+      <Project>{868129e9-b0dc-4b12-ac5e-a8ef233595b7}</Project>
+      <Name>MarketSolutions.SharedKernal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MarketSolutionsDataMigrations\201701130148353_FirstInitialisation.resx">
+      <DependentUpon>201701130148353_FirstInitialisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketSolutionsDataMigrations\201701130426480_Second.resx">
+      <DependentUpon>201701130426480_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketSolutionsDataMigrations\201701130433337_ProductInventory.resx">
+      <DependentUpon>201701130433337_ProductInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketSolutionsDataMigrations\201701140011349_ProductUpdate.resx">
+      <DependentUpon>201701140011349_ProductUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketSolutionsDataMigrations\201701140015565_ProductUpdate2.resx">
+      <DependentUpon>201701140015565_ProductUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

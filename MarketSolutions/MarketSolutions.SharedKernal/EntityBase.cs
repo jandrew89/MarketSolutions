@@ -8,16 +8,11 @@ namespace MarketSolutions.SharedKernal
 {
     public abstract class EntityBase<IdType> : IEquatable<EntityBase<IdType>>
     {
-        private readonly IdType _id;
+        public IdType Id { get; private set; }
 
         public EntityBase(IdType id)
         {
-            this._id = id;
-        }
-
-        public IdType Id
-        {
-            get { return _id; }
+            Id = id;
         }
 
         public override bool Equals(object entity)
