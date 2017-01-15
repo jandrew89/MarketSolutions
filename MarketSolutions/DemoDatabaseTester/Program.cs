@@ -15,14 +15,6 @@ namespace DemoDatabaseTester
             ProductionContextService domainService = new ProductionContextService();
 
             domainService.ProductionTestingContext();
-
-            //StoreContext context = new StoreContext();
-
-            //List<Product> products = context.Products.ToList();
-            //foreach (Product product in products)
-            //{
-            //    Debug.WriteLine($"Product ID: {product.ProductID}, Product name {product.ProductName}, Unit Price {product.UnitPrice}");
-            //}
         }
     }
 }

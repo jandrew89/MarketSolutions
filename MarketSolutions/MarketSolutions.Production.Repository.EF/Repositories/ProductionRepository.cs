@@ -1,6 +1,7 @@
 ﻿using MarketSolutions.Production.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,11 @@ namespace MarketSolutions.Production.Repository.EF.Repositories
             return productsWithCategory;
         }
 
-        public IList<ProductInventory> GetProductInventory()
+        public void ModifyProduct(Product product)
         {
             ProductionContext context = new ProductionContext();
-            IList<ProductInventory> products = context.ProductInventories.ToList();
-            return products;
+            context.Entry<Product>(product).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace MarketSolutions.Production.Domain
         public Product(int Id, int productCategoryId, string productName, decimal unitPrice, 
             string productDescription, bool discontinued, ProductCategory productCategory) : base(Id)
         {
+            if (productCategory == null) throw new ArgumentNullException("Product Category");
             this.ProductCategory = productCategory;
             this.Discontinued = discontinued;
             this.UnitPrice = unitPrice;
@@ -43,6 +44,9 @@ namespace MarketSolutions.Production.Domain
             get { return _discontined; }
             set { _discontined = value; }
         }
+
+        public void UpdateAvailability(bool avaliable) =>
+            this._discontined = avaliable;
 
         private ProductCategory _productCategory;
         public ProductCategory ProductCategory
