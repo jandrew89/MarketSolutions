@@ -9,7 +9,19 @@ namespace MarketSolutions.Production.Repository.EF.Repositories
 {
     public class ProductionViewModelRepository : IProductionViewModelRepository
     {
-        public IList<Product> ConvertToDomain(IEnumerable<ProductionViewModel> viewModels)
+
+        public Product ConvertProductViewModelToDomain(ProductionViewModel viewModel)
+        {
+            ProductionContext context = new ProductionContext();
+
+            ProductCategory prodCategory = context.ProductCategories.Where(pc => pc.Id == viewModel.ProductCategoryId).SingleOrDefault(); 
+
+            Product product = new Product(viewModel.ProductId, viewModel.ProductCategoryId, viewModel.ProductName, viewModel.UnitPrice, 
+                viewModel.ProductDescription, viewModel.Discontinued, prodCategory);
+            return product;
+        }
+
+        public IList<Product> ConvertToDomains(IEnumerable<ProductionViewModel> viewModels)
         {
             List<Product> products = new List<Product>();
             ProductionContext context = new ProductionContext();

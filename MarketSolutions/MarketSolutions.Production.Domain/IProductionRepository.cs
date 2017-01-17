@@ -9,6 +9,6 @@ namespace MarketSolutions.Production.Domain
     public interface IProductionRepository
     {
         IList<Product> GetProductsFromCategory(ProductCategory productCategory);
-        void ModifyProduct(Product product);
+        void AddOrModifyProduct(Product product);
     }
 }

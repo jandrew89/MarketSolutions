@@ -23,7 +23,6 @@ namespace DemoDatabaseTester
             foreach (Product product in products)
             {
                 product.Discontinued = true;
-                productionRepo.ModifyProduct(product);
                 Debug.WriteLine($"Poduct name {product.ProductName}{product.Discontinued}");
             }
         }

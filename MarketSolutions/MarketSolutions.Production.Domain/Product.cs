@@ -27,6 +27,7 @@ namespace MarketSolutions.Production.Domain
             this.Discontinued = discontinued;
             this.UnitPrice = unitPrice;
             this.ProductCategoryId = productCategoryId;
+            this.Description = productDescription;
             this.ProductName = productName;
             this.ProductUnit = new ProductUnit(productName, productDescription);
         }

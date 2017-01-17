@@ -22,9 +22,30 @@ namespace MarketSolutions.Production.ApplicationService.Implementations
             this._productionViewModelRepository = productionViewModelRepository;
         }
 
+        public async Task<AddOrUpdateProductResponse> AddOrUpdateProductAsync(AddOrUpdateProductRequest addOrUpdateProductRequest)
+        {
+            return await Task<AddOrUpdateProductResponse>.Run(() => AddOrUpdateProduct(addOrUpdateProductRequest));
+        }
+
         public async Task<ProductResponse> GetProductFromCategoryAsync(ProductRequest productRequest)
         {
             return await Task<ProductResponse>.Run(() => GetProductFromCategory(productRequest));
+        }
+
+        public AddOrUpdateProductResponse AddOrUpdateProduct(AddOrUpdateProductRequest addOrUpdateProductRequest)
+        {
+            AddOrUpdateProductResponse resp = new AddOrUpdateProductResponse();
+            try
+            {
+                Product product = _productionViewModelRepository.ConvertProductViewModelToDomain(addOrUpdateProductRequest.ProductionViewModel);
+                _productionRepository.AddOrModifyProduct(product);
+                resp.Product = product;
+            }
+            catch (Exception ex)
+            {
+                resp.Exception = ex;
+            }
+            return resp;
         }
 
         private ProductResponse GetProductFromCategory(ProductRequest productRequest)

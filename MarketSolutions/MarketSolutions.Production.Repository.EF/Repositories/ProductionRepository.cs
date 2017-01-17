@@ -17,10 +17,22 @@ namespace MarketSolutions.Production.Repository.EF.Repositories
             return productsWithCategory;
         }
 
-        public void ModifyProduct(Product product)
+        public void AddOrModifyProduct(Product product)
         {
             ProductionContext context = new ProductionContext();
-            context.Entry<Product>(product).State = EntityState.Modified;
+
+            //Product productModify = context.Products.Where(p => p.Id == product.Id).SingleOrDefault();
+            //if (productModify == null)
+            //{
+            //    context.Entry<Product>(product).State = EntityState.Added;
+            //}
+            //else
+            //{
+            //    context.Entry<Product>(product).State = EntityState.Modified;
+            //}
+
+            context.Entry(product).State = product.Id == 0 ? EntityState.Added : EntityState.Modified;
+
             context.SaveChanges();
         }
     }

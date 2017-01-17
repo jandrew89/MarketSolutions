@@ -21,6 +21,8 @@ namespace MarketSolutions.WebApi.Controllers
             this._productionService = productionService;
         }
 
+
+
         public async Task<IHttpActionResult> Get()
         {
             ProductRequest productRequest = new ProductRequest(new ProductCategory(1, "PS4 Games"));
@@ -33,5 +35,15 @@ namespace MarketSolutions.WebApi.Controllers
             return InternalServerError(productResponse.Exception);
         }
 
+        public IHttpActionResult Post(ProductionViewModel productionViewModel)
+        {
+            AddOrUpdateProductRequest request = new AddOrUpdateProductRequest(productionViewModel);
+            AddOrUpdateProductResponse response = _productionService.AddOrUpdateProduct(request);
+            if (response.Exception == null)
+            {
+                return Ok<string>(response.Product.ProductName);
+            }
+            return InternalServerError(response.Exception);
+        }
     }
 }

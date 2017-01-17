@@ -43,7 +43,7 @@
     <Compile Include="Abstractions\IProductionService.cs" />
     <Compile Include="Implementations\ProductionService.cs" />
     <Compile Include="Messaging\AddOrUpdateProductResponse.cs" />
-    <Compile Include="Messaging\AddOrUpdateProductsRequest.cs" />
+    <Compile Include="Messaging\AddOrUpdateProductRequest.cs" />
     <Compile Include="Messaging\ProductRequest.cs" />
     <Compile Include="Messaging\ProductResponse.cs" />
     <Compile Include="Messaging\ServiceRequestBase.cs" />

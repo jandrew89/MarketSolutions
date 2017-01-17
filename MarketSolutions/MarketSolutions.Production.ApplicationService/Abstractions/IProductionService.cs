@@ -10,5 +10,8 @@ namespace MarketSolutions.Production.ApplicationService.Abstractions
     public interface IProductionService
     {
         Task<ProductResponse> GetProductFromCategoryAsync(ProductRequest productRequest);
+        Task<AddOrUpdateProductResponse> AddOrUpdateProductAsync(AddOrUpdateProductRequest addOrUpdateProductRequest);
+        AddOrUpdateProductResponse AddOrUpdateProduct(AddOrUpdateProductRequest addOrUpdateProductRequest);
+
     }
 }

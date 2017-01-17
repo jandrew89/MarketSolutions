@@ -10,6 +10,8 @@ namespace MarketSolutions.Production.Domain
     public interface IProductionViewModelRepository
     {
         IList<ProductionViewModel> ConvertToViewModels(IEnumerable<Product> domains);
-        IList<Product> ConvertToDomain(IEnumerable<ProductionViewModel> viewModels);
+        IList<Product> ConvertToDomains(IEnumerable<ProductionViewModel> viewModels);
+        Product ConvertProductViewModelToDomain(ProductionViewModel viewModel);
+
     }
 }
