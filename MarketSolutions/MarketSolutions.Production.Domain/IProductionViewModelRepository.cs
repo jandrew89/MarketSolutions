@@ -11,7 +11,7 @@ namespace MarketSolutions.Production.Domain
     {
         IList<ProductionViewModel> ConvertToViewModels(IEnumerable<Product> domains);
         IList<Product> ConvertToDomains(IEnumerable<ProductionViewModel> viewModels);
-        Product ConvertProductViewModelToDomain(ProductionViewModel viewModel);
+        AddOrUpdateProductionValidation ConvertProductViewModelToDomain(ProductionViewModel viewModel);
 
     }
 }

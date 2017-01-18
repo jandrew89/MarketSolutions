@@ -32,14 +32,17 @@ namespace MarketSolutions.Production.ApplicationService.Implementations
             return await Task<ProductResponse>.Run(() => GetProductFromCategory(productRequest));
         }
 
-        public AddOrUpdateProductResponse AddOrUpdateProduct(AddOrUpdateProductRequest addOrUpdateProductRequest)
+        private AddOrUpdateProductResponse AddOrUpdateProduct(AddOrUpdateProductRequest addOrUpdateProductRequest)
         {
             AddOrUpdateProductResponse resp = new AddOrUpdateProductResponse();
             try
             {
-                Product product = _productionViewModelRepository.ConvertProductViewModelToDomain(addOrUpdateProductRequest.ProductionViewModel);
-                _productionRepository.AddOrModifyProduct(product);
-                resp.Product = product;
+                AddOrUpdateProductionValidation validation = _productionViewModelRepository.ConvertProductViewModelToDomain(addOrUpdateProductRequest.ProductionViewModel);
+                _productionRepository.AddOrModifyProduct(validation);
+                resp.Product = validation.Product;
+                resp.ProductCategory = validation.ProductCategory;
+                resp.ProductInventory = validation.ProductInventory;
+
             }
             catch (Exception ex)
             {

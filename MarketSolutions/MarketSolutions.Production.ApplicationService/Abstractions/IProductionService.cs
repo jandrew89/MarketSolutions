@@ -11,7 +11,5 @@ namespace MarketSolutions.Production.ApplicationService.Abstractions
     {
         Task<ProductResponse> GetProductFromCategoryAsync(ProductRequest productRequest);
         Task<AddOrUpdateProductResponse> AddOrUpdateProductAsync(AddOrUpdateProductRequest addOrUpdateProductRequest);
-        AddOrUpdateProductResponse AddOrUpdateProduct(AddOrUpdateProductRequest addOrUpdateProductRequest);
-
     }
 }

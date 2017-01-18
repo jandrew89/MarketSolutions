@@ -35,10 +35,10 @@ namespace MarketSolutions.WebApi.Controllers
             return InternalServerError(productResponse.Exception);
         }
 
-        public IHttpActionResult Post(ProductionViewModel productionViewModel)
+        public async Task<IHttpActionResult> Post(ProductionViewModel productionViewModel)
         {
             AddOrUpdateProductRequest request = new AddOrUpdateProductRequest(productionViewModel);
-            AddOrUpdateProductResponse response = _productionService.AddOrUpdateProduct(request);
+            AddOrUpdateProductResponse response = await _productionService.AddOrUpdateProductAsync(request);
             if (response.Exception == null)
             {
                 return Ok<string>(response.Product.ProductName);
