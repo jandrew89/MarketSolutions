@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSolutions.WebApi", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostDeleteActionTester", "PostDeleteActionTester\PostDeleteActionTester.csproj", "{D0B0DE18-02C2-40D3-9C2F-6E71F69BEB22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSolutions.Infrastructure.Common", "MarketSolutions.Infrastructure.Common\MarketSolutions.Infrastructure.Common.csproj", "{AFC7988E-C98E-4600-B248-E4913676453A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{D0B0DE18-02C2-40D3-9C2F-6E71F69BEB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0B0DE18-02C2-40D3-9C2F-6E71F69BEB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0B0DE18-02C2-40D3-9C2F-6E71F69BEB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC7988E-C98E-4600-B248-E4913676453A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC7988E-C98E-4600-B248-E4913676453A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC7988E-C98E-4600-B248-E4913676453A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC7988E-C98E-4600-B248-E4913676453A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

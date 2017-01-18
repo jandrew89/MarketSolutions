@@ -13,18 +13,16 @@ namespace MarketSolutions.Production.Repository.EF.Repositories
         public AddOrUpdateProductionValidation ConvertProductViewModelToDomain(ProductionViewModel viewModel)
         {
             ProductionContext context = new ProductionContext();
-            AddOrUpdateProductionValidation validation = new AddOrUpdateProductionValidation();
 
             ProductCategory productCategory = ConvertToProductCategory(viewModel.ProductCategoryId, viewModel.ProductCategoryName);
-            validation.ProductCategory = productCategory;
 
             Product newProduct = new Product(viewModel.ProductId, viewModel.ProductCategoryId, viewModel.ProductName, viewModel.UnitPrice,
               viewModel.ProductDescription, viewModel.Discontinued, productCategory);
 
             ProductInventory productInventory = ConvertToProductInventory(newProduct, viewModel.Quantity);
-            validation.Product = newProduct;
-            validation.ProductInventory = productInventory;
-       
+
+            AddOrUpdateProductionValidation validation = new AddOrUpdateProductionValidation(newProduct, productCategory, productInventory);
+
             return validation;            
         }
 
