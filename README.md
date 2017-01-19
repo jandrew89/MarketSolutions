@@ -2,8 +2,13 @@
 
 Written in C#
 
-A Project focused on Domain Driven Design
+A Product application focused on Domain Driven Design
 
 Rest Web API, Structure Map for Dependency Injection.
-Using the Response/Request Pattern, Decorator Pattern.
+
+Using the Response/Request Pattern, 
+Decorator Pattern,
+Mediator Pattern,
+Singleton Pattern,
+
 Abstractions, Shared Kernal, Domain, Repositories, Bounded Contexts
