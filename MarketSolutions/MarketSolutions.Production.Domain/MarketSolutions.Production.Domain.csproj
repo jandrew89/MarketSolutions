@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddOrUpdateProductionValidation.cs" />
+    <Compile Include="DomainEvents\ProductionEventArgs.cs" />
     <Compile Include="IProductionRepository.cs" />
     <Compile Include="IProductionViewModelRepository.cs" />
     <Compile Include="Product.cs" />

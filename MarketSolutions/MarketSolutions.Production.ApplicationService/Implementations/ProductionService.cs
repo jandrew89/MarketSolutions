@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MarketSolutions.Production.ApplicationService.Messaging;
 using MarketSolutions.Production.Domain;
+using MarketSolutions.Infrastructure.Common.Emailing;
 
 namespace MarketSolutions.Production.ApplicationService.Implementations
 {

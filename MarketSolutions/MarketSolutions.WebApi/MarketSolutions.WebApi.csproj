@@ -175,6 +175,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarketSolutions.Infrastructure.Common\MarketSolutions.Infrastructure.Common.csproj">
+      <Project>{afc7988e-c98e-4600-b248-e4913676453a}</Project>
+      <Name>MarketSolutions.Infrastructure.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketSolutions.Production.ApplicationService\MarketSolutions.Production.ApplicationService.csproj">
       <Project>{9d7fba35-3f3e-43b9-b1e3-2f8b24ffa72c}</Project>
       <Name>MarketSolutions.Production.ApplicationService</Name>
@@ -186,6 +190,10 @@
     <ProjectReference Include="..\MarketSolutions.Production.Repository.EF\MarketSolutions.Production.Repository.EF.csproj">
       <Project>{9b4032ba-41af-4672-bc94-fb1c13c6b0f5}</Project>
       <Name>MarketSolutions.Production.Repository.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketSolutions.SharedKernal\MarketSolutions.SharedKernal.csproj">
+      <Project>{868129e9-b0dc-4b12-ac5e-a8ef233595b7}</Project>
+      <Name>MarketSolutions.SharedKernal</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace MarketSolutions.WebApi.DependencyResolution {
+    using Infrastructure.Common.Emailing;
+    using Production.ApplicationService.Abstractions;
     using Production.ApplicationService.Implementations;
     using Production.Repository.EF.Repositories;
     using StructureMap.Configuration.DSL;
@@ -32,6 +34,7 @@ namespace MarketSolutions.WebApi.DependencyResolution {
                     scan.AssemblyContainingType<ProductionViewModelRepository>();
                     scan.WithDefaultConventions();
                 });
+            //For<IProductionService>().Use<ProductionService>().DecorateWith(i => new ProductServiceWithEmail(i, new FakeEmailService()));
         }
 
         #endregion

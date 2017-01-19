@@ -17,5 +17,6 @@ namespace MarketSolutions.Production.Domain
             this.ProductCategory = productCategory;
             this.ProductInventory = productInventory;
         }
+
     }
 }

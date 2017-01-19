@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainEvents\DomainEventMediator.cs" />
+    <Compile Include="DomainEvents\IDomainEventHandler.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
