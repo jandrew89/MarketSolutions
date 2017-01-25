@@ -12,3 +12,12 @@ Mediator Pattern,
 Singleton Pattern,
 
 Abstractions, Shared Kernal, Domain, Repositories, Bounded Contexts
+
+Updates:
+
+1/25/2017
+Support for RabbitMq messaging service.
+
+Coming soon MongoDb repositories..
+
+
