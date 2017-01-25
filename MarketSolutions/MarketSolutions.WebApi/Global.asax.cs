@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MarketSolutions.Infrastructure.Common.ApplicationSettings;
+using MarketSolutions.Infrastructure.Common.ApplicationSettings.Implementations;
+using MarketSolutions.SharedKernal.DomainEvents;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +16,7 @@ namespace MarketSolutions.WebApi
     {
         protected void Application_Start()
         {
+            DomainEventMediator.RegisterDomainEventHandler(new ProductionChangedRabbitMqMessagingEventHandler(new ConfigFileConfigurationRepository()));
             GlobalConfiguration.Configure(WebApiConfig.Register);
          
         }

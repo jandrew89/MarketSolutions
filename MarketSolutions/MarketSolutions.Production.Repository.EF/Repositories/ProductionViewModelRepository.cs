@@ -84,8 +84,11 @@ namespace MarketSolutions.Production.Repository.EF.Repositories
             {
                 ProductionViewModel vm = new ProductionViewModel();
                 ProductInventory productInventory = context.ProductInventories.Where(pi => pi.ProductId == product.Id).SingleOrDefault();
-                if (productInventory == null) throw new ArgumentNullException("No Product Inventory");
-                vm.Quantity = productInventory.Quantity;
+                if (productInventory != null)
+                {
+                    vm.Quantity = productInventory.Quantity;
+                }
+                
 
                 ProductCategory productCategory = context.ProductCategories.Where(pc => pc.Id == product.ProductCategoryId).SingleOrDefault();
                 if (productCategory == null) throw new ArgumentNullException("No Product Category");

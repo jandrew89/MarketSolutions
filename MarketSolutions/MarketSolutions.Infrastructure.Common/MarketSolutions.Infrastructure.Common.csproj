@@ -30,7 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.4.1.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,13 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationSettings\ConfigFileConfigurationRepository.cs" />
+    <Compile Include="ApplicationSettings\IConfigurationRepository.cs" />
+    <Compile Include="ApplicationSettings\Implementations\ProductionChangedRabbitMqMessagingEventHandler.cs" />
     <Compile Include="Emailing\EmailArguments.cs" />
     <Compile Include="Emailing\EmailSendingResult.cs" />
     <Compile Include="Emailing\FakeEmailService.cs" />
     <Compile Include="Emailing\IEmailService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketSolutions.Production.Domain\MarketSolutions.Production.Domain.csproj">
+      <Project>{86C85F60-21E2-4153-8981-DBDF5ACA7140}</Project>
+      <Name>MarketSolutions.Production.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketSolutions.SharedKernal\MarketSolutions.SharedKernal.csproj">
+      <Project>{868129E9-B0DC-4B12-AC5E-A8EF233595B7}</Project>
+      <Name>MarketSolutions.SharedKernal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
