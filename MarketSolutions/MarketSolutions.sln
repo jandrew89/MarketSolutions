@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSolutions.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSolutions.FinancialPlanner", "MarketSolutions.FinancialPlanner\MarketSolutions.FinancialPlanner.csproj", "{B5845B40-62C4-49AA-A2AF-09BFBA5DB428}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbDatabaseTester", "MongoDbDatabaseTester\MongoDbDatabaseTester.csproj", "{D8455347-0C4F-435A-A3A0-0BAA46C42C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSolutions.Production.Repository.MongoDb", "MarketSolutions.Production.Repository.MongoDb\MarketSolutions.Production.Repository.MongoDb.csproj", "{85E25D17-1B02-42DD-86F8-410F8CD97516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{B5845B40-62C4-49AA-A2AF-09BFBA5DB428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5845B40-62C4-49AA-A2AF-09BFBA5DB428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5845B40-62C4-49AA-A2AF-09BFBA5DB428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8455347-0C4F-435A-A3A0-0BAA46C42C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8455347-0C4F-435A-A3A0-0BAA46C42C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8455347-0C4F-435A-A3A0-0BAA46C42C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8455347-0C4F-435A-A3A0-0BAA46C42C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E25D17-1B02-42DD-86F8-410F8CD97516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E25D17-1B02-42DD-86F8-410F8CD97516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E25D17-1B02-42DD-86F8-410F8CD97516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E25D17-1B02-42DD-86F8-410F8CD97516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +104,6 @@ Global
 		{EB5F964D-91FF-4065-A75A-7655C2471F6B} = {164C3A17-81CA-46BD-A671-AC90A36083D0}
 		{9B4032BA-41AF-4672-BC94-FB1C13C6B0F5} = {EB5F964D-91FF-4065-A75A-7655C2471F6B}
 		{9D7FBA35-3F3E-43B9-B1E3-2F8B24FFA72C} = {EB5F964D-91FF-4065-A75A-7655C2471F6B}
+		{85E25D17-1B02-42DD-86F8-410F8CD97516} = {EB5F964D-91FF-4065-A75A-7655C2471F6B}
 	EndGlobalSection
 EndGlobal

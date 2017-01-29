@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarketSolutions.Infrastructure.Common.ApplicationSettings
+namespace MarketSolutions.Infrastructure.Common.ApplicationSettings.Implementations
 {
     public class ConfigFileConfigurationRepository : IConfigurationRepository
     {
