@@ -18,6 +18,10 @@ Updates:
 1/25/2017
 Support for RabbitMq messaging service.
 
+1/29/2017
+MongoDb Integration.. Testing.. 
+
+
 Coming soon MongoDb repositories..
 
 
